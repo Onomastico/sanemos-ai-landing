@@ -194,6 +194,114 @@
       line-height: 1.5;
     }
 
+    /* Section titles */
+    .section-title {
+      text-align: center;
+      padding: 80px 0 16px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .section-title h2 .highlight {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-warm));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Resource tags */
+    .resource-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .resource-tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--accent-primary);
+      border: 1px solid rgba(59, 130, 246, 0.15);
+    }
+
+    .resource-tag.cosmo {
+      background: rgba(161, 137, 217, 0.1);
+      color: var(--accent-warm);
+      border-color: rgba(161, 137, 217, 0.2);
+    }
+
+    /* Tools grid — 2 columns for bigger cards */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 40px 0 80px;
+    }
+
+    .tool-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-default);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: transform 250ms ease, border-color 250ms ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .tool-card .feature-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .tool-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .tool-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .tool-card .consent-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.15);
+      font-size: 0.8rem;
+      color: var(--accent-calm);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      .tools-grid { grid-template-columns: 1fr; }
+    }
+
     /* CTA / Email */
     .cta-section {
       text-align: center;
@@ -426,6 +534,101 @@
       </div>
     </div>
 
+    <!-- Grief Resources Section -->
+    <div class="section-title">
+      <h2>
+        <span data-i18n="resources_title_pre">Recursos para </span>
+        <span class="highlight" data-i18n="resources_title_hl">tu duelo</span>
+      </h2>
+      <p data-i18n="resources_desc">Contenido curado que acompaña tu proceso. Películas, series, libros y música organizados por tipo y cosmovisión.</p>
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <span class="feature-icon" aria-hidden="true">&#x1F3AC;</span>
+        <h3 data-i18n="res_movies_title">Películas</h3>
+        <p data-i18n="res_movies_desc">Historias que reflejan el duelo y la pérdida desde distintas perspectivas culturales y emocionales.</p>
+        <div class="resource-tags">
+          <span class="resource-tag" data-i18n="tag_drama">Drama</span>
+          <span class="resource-tag" data-i18n="tag_animated">Animación</span>
+          <span class="resource-tag" data-i18n="tag_documentary">Documental</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon" aria-hidden="true">&#x1F4FA;</span>
+        <h3 data-i18n="res_series_title">Series</h3>
+        <p data-i18n="res_series_desc">Series que exploran el duelo con profundidad, empatía y distintas miradas sobre la vida y la muerte.</p>
+        <div class="resource-tags">
+          <span class="resource-tag" data-i18n="tag_drama">Drama</span>
+          <span class="resource-tag" data-i18n="tag_miniseries">Miniseries</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon" aria-hidden="true">&#x1F4DA;</span>
+        <h3 data-i18n="res_books_title">Libros</h3>
+        <p data-i18n="res_books_desc">Lecturas que guían, consuelan y dan palabras a lo que muchas veces no sabemos expresar.</p>
+        <div class="resource-tags">
+          <span class="resource-tag" data-i18n="tag_selfhelp">Autoayuda</span>
+          <span class="resource-tag" data-i18n="tag_essays">Ensayo</span>
+          <span class="resource-tag" data-i18n="tag_fiction">Ficción</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon" aria-hidden="true">&#x1F3B5;</span>
+        <h3 data-i18n="res_music_title">Música</h3>
+        <p data-i18n="res_music_desc">Playlists y álbumes que acompañan cada etapa del duelo, desde el dolor hasta la aceptación.</p>
+        <div class="resource-tags">
+          <span class="resource-tag" data-i18n="tag_playlists">Playlists</span>
+          <span class="resource-tag" data-i18n="tag_ambient">Ambient</span>
+          <span class="resource-tag" data-i18n="tag_instrumental">Instrumental</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cosmovision tags -->
+    <div style="text-align: center; padding-bottom: 40px;">
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;" data-i18n="cosmo_label">Filtrable por cosmovisión:</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+        <span class="resource-tag cosmo" data-i18n="cosmo_western">Occidental</span>
+        <span class="resource-tag cosmo" data-i18n="cosmo_eastern">Oriental</span>
+        <span class="resource-tag cosmo" data-i18n="cosmo_indigenous">Indígena</span>
+        <span class="resource-tag cosmo" data-i18n="cosmo_african">Africana</span>
+        <span class="resource-tag cosmo" data-i18n="cosmo_spiritual">Espiritual</span>
+        <span class="resource-tag cosmo" data-i18n="cosmo_secular">Secular</span>
+      </div>
+    </div>
+
+    <!-- Tools Section -->
+    <div class="section-title">
+      <h2>
+        <span data-i18n="tools_title_pre">Herramientas para </span>
+        <span class="highlight" data-i18n="tools_title_hl">tu proceso</span>
+      </h2>
+      <p data-i18n="tools_desc">Espacios digitales diseñados con cuidado para acompañarte en cada etapa de tu camino.</p>
+    </div>
+
+    <div class="tools-grid">
+      <div class="tool-card">
+        <span class="feature-icon" aria-hidden="true">&#x1F4D3;</span>
+        <h3 data-i18n="journal_title">Diario del Duelo</h3>
+        <p data-i18n="journal_desc">Un espacio privado para escribir lo que sientes, cuando lo sientas. Con prompts guiados por IA que te ayudan a explorar tus emociones sin presión. Registra tu proceso, observa tu evolución y encuentra palabras para lo que parece indecible.</p>
+      </div>
+      <div class="tool-card">
+        <span class="feature-icon" aria-hidden="true">&#x1F48C;</span>
+        <h3 data-i18n="capsule_title">Cápsula del Tiempo</h3>
+        <p data-i18n="capsule_desc">Guarda mensajes, fotos, audios y recuerdos para tu yo del futuro o para quienes amas. Programa su apertura para una fecha especial. Una forma de honrar la memoria y mantener vivos los vínculos que importan.</p>
+      </div>
+      <div class="tool-card">
+        <span class="feature-icon" aria-hidden="true">&#x1F517;</span>
+        <h3 data-i18n="therapist_title">Conexión con tu Terapeuta</h3>
+        <p data-i18n="therapist_desc">Comparte tu progreso, entradas de diario y datos emocionales con tu terapeuta profesional. Tu terapeuta recibe un panorama más completo de tu estado emocional entre sesiones, permitiendo un acompañamiento más preciso y personalizado.</p>
+        <div class="consent-note">
+          <span aria-hidden="true">&#x1F512;</span>
+          <span data-i18n="therapist_consent">Solo bajo tu consentimiento explícito. Tú decides qué compartir, con quién y cuándo. Puedes revocar el acceso en cualquier momento.</span>
+        </div>
+      </div>
+    </div>
+
     <div class="crisis-banner">
       <p data-i18n="crisis" data-i18n-html="true">
         <strong>Si estás en crisis:</strong> Llama al <strong>988</strong> (USA) o al <strong>4141</strong> (Chile).
@@ -467,6 +670,46 @@
         feat2_desc: 'Conecta con personas que entienden lo que estás pasando. Chat en tiempo real y grupos de soporte.',
         feat3_title: 'Terapeutas profesionales',
         feat3_desc: 'Acceso a profesionales de salud mental con herramientas clínicas integradas en la plataforma.',
+        // Resources
+        resources_title_pre: 'Recursos para ',
+        resources_title_hl: 'tu duelo',
+        resources_desc: 'Contenido curado que acompaña tu proceso. Películas, series, libros y música organizados por tipo y cosmovisión.',
+        res_movies_title: 'Películas',
+        res_movies_desc: 'Historias que reflejan el duelo y la pérdida desde distintas perspectivas culturales y emocionales.',
+        res_series_title: 'Series',
+        res_series_desc: 'Series que exploran el duelo con profundidad, empatía y distintas miradas sobre la vida y la muerte.',
+        res_books_title: 'Libros',
+        res_books_desc: 'Lecturas que guían, consuelan y dan palabras a lo que muchas veces no sabemos expresar.',
+        res_music_title: 'Música',
+        res_music_desc: 'Playlists y álbumes que acompañan cada etapa del duelo, desde el dolor hasta la aceptación.',
+        tag_drama: 'Drama',
+        tag_animated: 'Animación',
+        tag_documentary: 'Documental',
+        tag_miniseries: 'Miniseries',
+        tag_selfhelp: 'Autoayuda',
+        tag_essays: 'Ensayo',
+        tag_fiction: 'Ficción',
+        tag_playlists: 'Playlists',
+        tag_ambient: 'Ambient',
+        tag_instrumental: 'Instrumental',
+        cosmo_label: 'Filtrable por cosmovisión:',
+        cosmo_western: 'Occidental',
+        cosmo_eastern: 'Oriental',
+        cosmo_indigenous: 'Indígena',
+        cosmo_african: 'Africana',
+        cosmo_spiritual: 'Espiritual',
+        cosmo_secular: 'Secular',
+        // Tools
+        tools_title_pre: 'Herramientas para ',
+        tools_title_hl: 'tu proceso',
+        tools_desc: 'Espacios digitales diseñados con cuidado para acompañarte en cada etapa de tu camino.',
+        journal_title: 'Diario del Duelo',
+        journal_desc: 'Un espacio privado para escribir lo que sientes, cuando lo sientas. Con prompts guiados por IA que te ayudan a explorar tus emociones sin presión. Registra tu proceso, observa tu evolución y encuentra palabras para lo que parece indecible.',
+        capsule_title: 'Cápsula del Tiempo',
+        capsule_desc: 'Guarda mensajes, fotos, audios y recuerdos para tu yo del futuro o para quienes amas. Programa su apertura para una fecha especial. Una forma de honrar la memoria y mantener vivos los vínculos que importan.',
+        therapist_title: 'Conexión con tu Terapeuta',
+        therapist_desc: 'Comparte tu progreso, entradas de diario y datos emocionales con tu terapeuta profesional. Tu terapeuta recibe un panorama más completo de tu estado emocional entre sesiones, permitiendo un acompañamiento más preciso y personalizado.',
+        therapist_consent: 'Solo bajo tu consentimiento explícito. Tú decides qué compartir, con quién y cuándo. Puedes revocar el acceso en cualquier momento.',
         crisis: '<strong>Si estás en crisis:</strong> Llama al <strong>988</strong> (USA) o al <strong>4141</strong> (Chile). No estás solo/a. Hay ayuda disponible ahora mismo.',
         cta_title: 'Entérate cuando lancemos',
         cta_desc: 'Déjanos tu correo y te avisamos cuando esté listo.',
@@ -492,6 +735,46 @@
         feat2_desc: 'Connect with people who understand what you\'re going through. Real-time chat and support groups.',
         feat3_title: 'Professional therapists',
         feat3_desc: 'Access to mental health professionals with clinical tools integrated into the platform.',
+        // Resources
+        resources_title_pre: 'Resources for ',
+        resources_title_hl: 'your grief',
+        resources_desc: 'Curated content to support your journey. Movies, series, books, and music organized by type and worldview.',
+        res_movies_title: 'Movies',
+        res_movies_desc: 'Stories that reflect grief and loss from diverse cultural and emotional perspectives.',
+        res_series_title: 'Series',
+        res_series_desc: 'Series that explore grief with depth, empathy, and different views on life and death.',
+        res_books_title: 'Books',
+        res_books_desc: 'Readings that guide, comfort, and give words to what we often struggle to express.',
+        res_music_title: 'Music',
+        res_music_desc: 'Playlists and albums that accompany each stage of grief, from pain to acceptance.',
+        tag_drama: 'Drama',
+        tag_animated: 'Animation',
+        tag_documentary: 'Documentary',
+        tag_miniseries: 'Miniseries',
+        tag_selfhelp: 'Self-help',
+        tag_essays: 'Essays',
+        tag_fiction: 'Fiction',
+        tag_playlists: 'Playlists',
+        tag_ambient: 'Ambient',
+        tag_instrumental: 'Instrumental',
+        cosmo_label: 'Filter by worldview:',
+        cosmo_western: 'Western',
+        cosmo_eastern: 'Eastern',
+        cosmo_indigenous: 'Indigenous',
+        cosmo_african: 'African',
+        cosmo_spiritual: 'Spiritual',
+        cosmo_secular: 'Secular',
+        // Tools
+        tools_title_pre: 'Tools for ',
+        tools_title_hl: 'your journey',
+        tools_desc: 'Digital spaces carefully designed to support you at every stage of your path.',
+        journal_title: 'Grief Journal',
+        journal_desc: 'A private space to write what you feel, whenever you feel it. With AI-guided prompts that help you explore your emotions without pressure. Track your process, observe your growth, and find words for what seems unspeakable.',
+        capsule_title: 'Time Capsule',
+        capsule_desc: 'Save messages, photos, audio, and memories for your future self or those you love. Schedule them to open on a special date. A way to honor memory and keep alive the bonds that matter.',
+        therapist_title: 'Therapist Connection',
+        therapist_desc: 'Share your progress, journal entries, and emotional data with your professional therapist. Your therapist gets a more complete picture of your emotional state between sessions, enabling more precise and personalized support.',
+        therapist_consent: 'Only with your explicit consent. You decide what to share, with whom, and when. You can revoke access at any time.',
         crisis: '<strong>If you\'re in crisis:</strong> Call <strong>988</strong> (USA) or <strong>4141</strong> (Chile). You\'re not alone. Help is available right now.',
         cta_title: 'Get notified when we launch',
         cta_desc: 'Leave your email and we\'ll let you know when it\'s ready.',
