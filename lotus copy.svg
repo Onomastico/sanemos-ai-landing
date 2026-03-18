@@ -1,0 +1,22 @@
+<svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lotus-grad" x1="0" y1="0" x2="120" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9CCF6A" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#5FB7A6" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="heart-grad" x1="50" y1="40" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9CCF6A"/>
+      <stop offset="100%" stop-color="#5FB7A6"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer petals -->
+  <path d="M60 15 C40 15 15 35 15 55 C15 65 25 72 35 70 C42 68 50 60 60 50 C70 60 78 68 85 70 C95 72 105 65 105 55 C105 35 80 15 60 15Z" fill="url(#lotus-grad)" opacity="0.3"/>
+  <!-- Middle petals -->
+  <path d="M60 25 C48 28 30 42 30 55 C30 62 36 66 42 64 C48 62 54 55 60 48 C66 55 72 62 78 64 C84 66 90 62 90 55 C90 42 72 28 60 25Z" fill="url(#lotus-grad)" opacity="0.5"/>
+  <!-- Inner petals -->
+  <path d="M60 35 C52 38 42 48 42 56 C42 60 46 63 50 61 C54 59 57 54 60 50 C63 54 66 59 70 61 C74 63 78 60 78 56 C78 48 68 38 60 35Z" fill="url(#lotus-grad)" opacity="0.7"/>
+  <!-- Heart center -->
+  <path d="M60 52 C57 48 52 48 52 52 C52 56 60 62 60 62 C60 62 68 56 68 52 C68 48 63 48 60 52Z" fill="url(#heart-grad)" opacity="0.9"/>
+  <!-- Base arc -->
+  <path d="M35 72 Q47 80 60 78 Q73 80 85 72" stroke="url(#heart-grad)" stroke-width="1.5" fill="none" opacity="0.4"/>
+</svg>
