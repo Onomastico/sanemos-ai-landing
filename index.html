@@ -247,13 +247,6 @@
       margin-bottom: 12px;
     }
 
-    .section-header h2 .highlight {
-      background: var(--gradient-brand);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
     .section-header p {
       font-size: var(--text-md);
       color: var(--text-secondary);
@@ -262,134 +255,118 @@
       line-height: 1.7;
     }
 
-    /* Feature cards — Glassmorphism */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-      gap: 20px;
-      padding: 40px 0 clamp(48px, 8vw, 80px);
-    }
+    /* (card/grid/tag styles removed — page now uses narrative pillars + tool stack) */
 
-    .card {
-      background: var(--bg-surface-glass);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-card);
-      padding: 28px 24px;
-      transition: transform 300ms var(--ease-out-quart),
-                  border-color 400ms var(--ease-out-quart),
-                  box-shadow 400ms var(--ease-out-quart);
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      border-color: var(--border-hover);
-      box-shadow: 0 8px 32px rgba(95, 183, 166, 0.08),
-                  0 0 0 1px rgba(95, 183, 166, 0.05);
-    }
-
-    .card-icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
+    /* Lotus */
+    .lotus {
+      width: 100px;
+      height: 84px;
+      margin: 0 auto 32px;
       display: block;
+      animation: lotusBreath 6s ease-in-out infinite;
     }
 
-    .card h3 {
+    @keyframes lotusBreath {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+
+    /* Narrative pillars */
+    .pillars {
+      text-align: center;
+      padding: clamp(32px, 6vw, 60px) 0;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .pillar {
+      font-family: var(--font-voice);
+      font-style: italic;
+      font-size: var(--text-md);
+      color: var(--text-secondary);
+      line-height: 1.8;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .pillar:last-child {
+      border-bottom: none;
+    }
+
+    .pillar {
+      transition: color 400ms var(--ease-out-quart),
+                  opacity 500ms var(--ease-out-quart),
+                  transform 500ms var(--ease-out-quart);
+    }
+
+    .pillar:hover {
+      color: var(--text-primary);
+    }
+
+    /* Distilled resources */
+    .resources-section {
+      text-align: center;
+      padding: clamp(48px, 8vw, 80px) 0 clamp(32px, 4vw, 48px);
+    }
+
+    .resources-section h2 {
       font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3.5vw, 1.875rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      font-kerning: normal;
+      color: var(--accent-teal);
+      margin-bottom: 16px;
+    }
+
+    .resources-section p {
       font-size: var(--text-base);
+      color: var(--text-secondary);
+      max-width: 48ch;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Tools — stacked, not gridded */
+    .tools-stack {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 24px 0 clamp(48px, 8vw, 80px);
+    }
+
+    .tool-item {
+      text-align: center;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .tool-item:last-child {
+      border-bottom: none;
+    }
+
+    .tool-item h3 {
+      transition: color 400ms var(--ease-out-quart);
+    }
+
+    .tool-item:hover h3 {
+      color: var(--accent-teal);
+    }
+
+    .tool-item h3 {
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
       font-weight: 600;
       letter-spacing: -0.01em;
       margin-bottom: 8px;
     }
 
-    .card p {
+    .tool-item p {
       font-size: var(--text-sm);
       color: var(--text-secondary);
+      max-width: 44ch;
+      margin: 0 auto;
       line-height: 1.65;
-    }
-
-    /* Resource tags — pill */
-    .resource-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 12px;
-    }
-
-    .tag {
-      font-size: var(--text-xs);
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      padding: 3px 10px;
-      border-radius: var(--radius-pill);
-      background: rgba(95, 183, 166, 0.1);
-      color: var(--accent-teal);
-      border: 1px solid rgba(95, 183, 166, 0.15);
-    }
-
-    .tag--cosmo {
-      background: rgba(156, 207, 106, 0.08);
-      color: var(--accent-green);
-      border-color: rgba(156, 207, 106, 0.15);
-    }
-
-    /* Cosmovision center block */
-    .cosmo-section {
-      text-align: center;
-      padding-bottom: 40px;
-    }
-
-    .cosmo-section p {
-      font-size: var(--text-sm);
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .cosmo-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-    }
-
-    /* Tools grid — 2 columns for bigger cards */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-      gap: 20px;
-      padding: 40px 0 clamp(48px, 8vw, 80px);
-    }
-
-    .card--tool {
-      padding: 32px 28px;
-    }
-
-    .card--tool .card-icon {
-      font-size: 2.2rem;
-    }
-
-    .card--tool h3 {
-      font-size: var(--text-lg);
-      margin-bottom: 10px;
-    }
-
-    .card--tool p {
-      line-height: 1.7;
-    }
-
-    .consent-note {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-top: 14px;
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: rgba(95, 183, 166, 0.06);
-      border: 1px solid rgba(95, 183, 166, 0.12);
-      font-size: var(--text-xs);
-      color: var(--accent-teal);
-      line-height: 1.55;
     }
 
     /* Crisis banner */
@@ -510,12 +487,15 @@
 
     .form-success {
       display: none;
-      padding: 16px 24px;
+      padding: 24px 32px;
       border-radius: var(--radius-card);
-      background: rgba(95, 183, 166, 0.08);
-      border: 1px solid rgba(95, 183, 166, 0.2);
+      background: rgba(95, 183, 166, 0.06);
+      border: 1px solid rgba(95, 183, 166, 0.15);
       color: var(--accent-teal);
-      font-size: var(--text-base);
+      font-family: var(--font-voice);
+      font-style: italic;
+      font-size: var(--text-md);
+      line-height: 1.7;
       max-width: 440px;
       margin: 0 auto;
     }
@@ -605,6 +585,7 @@
     /* ========== ANIMATIONS ========== */
 
     /* Hero entrance — staggered fade-up */
+    .hero .lotus,
     .hero h1,
     .hero p {
       opacity: 0;
@@ -612,12 +593,16 @@
       animation: fadeUp 700ms var(--ease-out-quart) forwards;
     }
 
+    .hero .lotus {
+      animation-delay: 0ms;
+    }
+
     .hero h1 {
-      animation-delay: 100ms;
+      animation-delay: 200ms;
     }
 
     .hero p {
-      animation-delay: 300ms;
+      animation-delay: 400ms;
     }
 
     @keyframes fadeUp {
@@ -650,23 +635,27 @@
       transform: translateY(0);
     }
 
-    /* Stagger children within a grid */
-    .reveal-stagger > .card {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 500ms var(--ease-out-quart),
-                  transform 500ms var(--ease-out-quart);
-    }
-
-    .reveal-stagger.is-visible > .card {
+    /* Stagger children within pillars/tools */
+    .pillars.is-visible .pillar,
+    .tools-stack.is-visible .tool-item {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .reveal-stagger.is-visible > .card:nth-child(1) { transition-delay: 0ms; }
-    .reveal-stagger.is-visible > .card:nth-child(2) { transition-delay: 100ms; }
-    .reveal-stagger.is-visible > .card:nth-child(3) { transition-delay: 200ms; }
-    .reveal-stagger.is-visible > .card:nth-child(4) { transition-delay: 300ms; }
+    .pillar,
+    .tool-item {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 500ms var(--ease-out-quart),
+                  transform 500ms var(--ease-out-quart);
+    }
+
+    .pillars.is-visible .pillar:nth-child(2),
+    .tools-stack.is-visible .tool-item:nth-child(1) { transition-delay: 0ms; }
+    .pillars.is-visible .pillar:nth-child(3),
+    .tools-stack.is-visible .tool-item:nth-child(2) { transition-delay: 120ms; }
+    .pillars.is-visible .pillar:nth-child(4),
+    .tools-stack.is-visible .tool-item:nth-child(3) { transition-delay: 240ms; }
 
     /* Crisis banner — gentle persistent border glow */
     .crisis-banner {
@@ -727,29 +716,10 @@
     /* ========== END ANIMATIONS ========== */
 
     /* Text overflow protection */
-    .card h3,
-    .card--tool h3 {
+    .tool-item h3,
+    .tool-item p {
       overflow-wrap: break-word;
       word-break: break-word;
-    }
-
-    .card p,
-    .card--tool p {
-      overflow-wrap: break-word;
-      word-break: break-word;
-    }
-
-    /* Grid items — prevent overflow */
-    .features-grid > *,
-    .tools-grid > * {
-      min-width: 0;
-    }
-
-    /* Backdrop-filter fallback for older browsers */
-    @supports not (backdrop-filter: blur(12px)) {
-      .card {
-        background: var(--bg-surface);
-      }
     }
 
     /* High contrast mode — gradient text becomes invisible, show solid color */
@@ -775,9 +745,7 @@
         border: 1px solid ButtonText !important;
       }
 
-      .card,
       .crisis-banner,
-      .consent-note,
       .form-success,
       .form-error {
         border: 1px solid CanvasText !important;
@@ -785,6 +753,15 @@
 
       .pulse-dot {
         background: LinkText !important;
+      }
+
+      .lotus {
+        opacity: 1 !important;
+      }
+
+      .lotus path {
+        fill: LinkText !important;
+        stroke: LinkText !important;
       }
     }
 
@@ -803,20 +780,9 @@
 
     /* Touch devices — disable hover transforms */
     @media (hover: none) {
-      .card:hover {
-        transform: none;
-        box-shadow: none;
-      }
-
       .btn-primary:hover {
         transform: none;
         box-shadow: none;
-      }
-
-      /* Increase tag touch targets on touch devices */
-      .tag {
-        padding: 6px 12px;
-        font-size: var(--text-xs);
       }
     }
 
@@ -841,9 +807,6 @@
 
     /* Mobile — 480px */
     @media (max-width: 480px) {
-      .features-grid { grid-template-columns: 1fr; }
-      .tools-grid { grid-template-columns: 1fr; }
-
       .email-form {
         flex-direction: column;
         align-items: stretch;
@@ -866,17 +829,17 @@
         padding: 4px 10px;
       }
 
-      .card {
-        padding: 24px 20px;
-      }
-
-      .card--tool {
-        padding: 24px 20px;
-      }
-
       .crisis-banner {
         padding: 16px 20px;
         margin-bottom: 32px;
+      }
+
+      .pillar {
+        padding: 12px 0;
+      }
+
+      .tool-item {
+        padding: 24px 0;
       }
 
       footer {
@@ -899,9 +862,10 @@
         font-size: 2rem;
       }
 
-      .card-icon {
-        font-size: 1.6rem;
-        margin-bottom: 12px;
+      .lotus {
+        width: 72px;
+        height: 60px;
+        margin-bottom: 24px;
       }
     }
 
@@ -960,6 +924,30 @@
 
     <main id="main-content">
       <section class="hero" aria-labelledby="hero-heading">
+        <!-- Lotus isotipo — resilience + love -->
+        <svg class="lotus" aria-hidden="true" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lotus-grad" x1="0" y1="0" x2="120" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#9CCF6A" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#5FB7A6" stop-opacity="0.5"/>
+            </linearGradient>
+            <linearGradient id="heart-grad" x1="50" y1="40" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#9CCF6A"/>
+              <stop offset="100%" stop-color="#5FB7A6"/>
+            </linearGradient>
+          </defs>
+          <!-- Outer petals -->
+          <path d="M60 15 C40 15 15 35 15 55 C15 65 25 72 35 70 C42 68 50 60 60 50 C70 60 78 68 85 70 C95 72 105 65 105 55 C105 35 80 15 60 15Z" fill="url(#lotus-grad)" opacity="0.3"/>
+          <!-- Middle petals -->
+          <path d="M60 25 C48 28 30 42 30 55 C30 62 36 66 42 64 C48 62 54 55 60 48 C66 55 72 62 78 64 C84 66 90 62 90 55 C90 42 72 28 60 25Z" fill="url(#lotus-grad)" opacity="0.5"/>
+          <!-- Inner petals -->
+          <path d="M60 35 C52 38 42 48 42 56 C42 60 46 63 50 61 C54 59 57 54 60 50 C63 54 66 59 70 61 C74 63 78 60 78 56 C78 48 68 38 60 35Z" fill="url(#lotus-grad)" opacity="0.7"/>
+          <!-- Heart center -->
+          <path d="M60 52 C57 48 52 48 52 52 C52 56 60 62 60 62 C60 62 68 56 68 52 C68 48 63 48 60 52Z" fill="url(#heart-grad)" opacity="0.9"/>
+          <!-- Base arc -->
+          <path d="M35 72 Q47 80 60 78 Q73 80 85 72" stroke="url(#heart-grad)" stroke-width="1.5" fill="none" opacity="0.4"/>
+        </svg>
+
         <h1 id="hero-heading">
           <span data-i18n="hero_pre">Tu espacio seguro para</span><br>
           <span class="highlight" data-i18n="hero_highlight">sanar juntos</span>
@@ -971,121 +959,38 @@
         </p>
       </section>
 
-      <section aria-labelledby="features-heading">
-        <h2 class="sr-only" id="features-heading" data-i18n="features_heading">Características principales</h2>
-        <div class="features-grid reveal-stagger">
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">&#x1F49C;</span>
-            <h3 data-i18n="feat1_title">Agentes de IA empáticos</h3>
-            <p data-i18n="feat1_desc">Compañeros virtuales entrenados para escucharte y guiarte en momentos difíciles, disponibles 24/7.</p>
-          </article>
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">&#x1F91D;</span>
-            <h3 data-i18n="feat2_title">Comunidad de apoyo</h3>
-            <p data-i18n="feat2_desc">Conecta con personas que entienden lo que estás pasando. Chat en tiempo real y grupos de soporte.</p>
-          </article>
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</span>
-            <h3 data-i18n="feat3_title">Terapeutas profesionales</h3>
-            <p data-i18n="feat3_desc">Acceso a profesionales de salud mental con herramientas clínicas integradas en la plataforma.</p>
-          </article>
-        </div>
+      <!-- Narrative pillars — flowing text, not cards -->
+      <section class="pillars reveal" aria-labelledby="pillars-heading">
+        <h2 class="sr-only" id="pillars-heading" data-i18n="features_heading">Características principales</h2>
+        <div class="pillar" data-i18n="pillar1">Agentes de IA que te escuchan sin juzgar. Disponibles cuando los necesites.</div>
+        <div class="pillar" data-i18n="pillar2">Una comunidad que entiende lo que estás viviendo. Nunca estás solo.</div>
+        <div class="pillar" data-i18n="pillar3">Terapeutas profesionales con herramientas integradas para acompañarte.</div>
       </section>
 
-      <!-- Grief Resources -->
-      <section aria-labelledby="resources-heading">
-        <div class="section-header reveal">
-          <h2 id="resources-heading">
-            <span data-i18n="resources_title_pre">Recursos para </span>
-            <span class="highlight" data-i18n="resources_title_hl">tu duelo</span>
-          </h2>
-          <p data-i18n="resources_desc">Contenido curado que acompaña tu proceso. Películas, series, libros y música organizados por tipo y cosmovisión.</p>
-        </div>
-
-        <div class="features-grid reveal-stagger">
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">&#x1F3AC;</span>
-            <h3 data-i18n="res_movies_title">Películas</h3>
-            <p data-i18n="res_movies_desc">Historias que reflejan el duelo y la pérdida desde distintas perspectivas culturales y emocionales.</p>
-            <div class="resource-tags">
-              <span class="tag" data-i18n="tag_drama">Drama</span>
-              <span class="tag" data-i18n="tag_animated">Animación</span>
-              <span class="tag" data-i18n="tag_documentary">Documental</span>
-            </div>
-          </article>
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">&#x1F4FA;</span>
-            <h3 data-i18n="res_series_title">Series</h3>
-            <p data-i18n="res_series_desc">Series que exploran el duelo con profundidad, empatía y distintas miradas sobre la vida y la muerte.</p>
-            <div class="resource-tags">
-              <span class="tag" data-i18n="tag_drama">Drama</span>
-              <span class="tag" data-i18n="tag_miniseries">Miniseries</span>
-            </div>
-          </article>
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">&#x1F4DA;</span>
-            <h3 data-i18n="res_books_title">Libros</h3>
-            <p data-i18n="res_books_desc">Lecturas que guían, consuelan y dan palabras a lo que muchas veces no sabemos expresar.</p>
-            <div class="resource-tags">
-              <span class="tag" data-i18n="tag_selfhelp">Autoayuda</span>
-              <span class="tag" data-i18n="tag_essays">Ensayo</span>
-              <span class="tag" data-i18n="tag_fiction">Ficción</span>
-            </div>
-          </article>
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">&#x1F3B5;</span>
-            <h3 data-i18n="res_music_title">Música</h3>
-            <p data-i18n="res_music_desc">Playlists y álbumes que acompañan cada etapa del duelo, desde el dolor hasta la aceptación.</p>
-            <div class="resource-tags">
-              <span class="tag" data-i18n="tag_playlists">Playlists</span>
-              <span class="tag" data-i18n="tag_ambient">Ambient</span>
-              <span class="tag" data-i18n="tag_instrumental">Instrumental</span>
-            </div>
-          </article>
-        </div>
-
-        <div class="cosmo-section reveal">
-          <p data-i18n="cosmo_label">Filtrable por cosmovisión:</p>
-          <div class="cosmo-tags">
-            <span class="tag tag--cosmo" data-i18n="cosmo_western">Occidental</span>
-            <span class="tag tag--cosmo" data-i18n="cosmo_eastern">Oriental</span>
-            <span class="tag tag--cosmo" data-i18n="cosmo_indigenous">Indígena</span>
-            <span class="tag tag--cosmo" data-i18n="cosmo_african">Africana</span>
-            <span class="tag tag--cosmo" data-i18n="cosmo_spiritual">Espiritual</span>
-            <span class="tag tag--cosmo" data-i18n="cosmo_secular">Secular</span>
-          </div>
-        </div>
+      <!-- Resources — distilled -->
+      <section class="resources-section reveal" aria-labelledby="resources-heading">
+        <h2 id="resources-heading" data-i18n="resources_title">Recursos para tu proceso</h2>
+        <p data-i18n="resources_desc_short">Películas, series, libros y música curados para acompañar cada etapa de tu duelo, desde distintas perspectivas culturales y cosmovisiones.</p>
       </section>
 
-      <!-- Tools -->
+      <!-- Tools — the product core -->
       <section aria-labelledby="tools-heading">
         <div class="section-header reveal">
-          <h2 id="tools-heading">
-            <span data-i18n="tools_title_pre">Herramientas para </span>
-            <span class="highlight" data-i18n="tools_title_hl">tu proceso</span>
-          </h2>
-          <p data-i18n="tools_desc">Espacios digitales diseñados con cuidado para acompañarte en cada etapa de tu camino.</p>
+          <h2 id="tools-heading" data-i18n="tools_title_full">Herramientas para tu proceso</h2>
         </div>
 
-        <div class="tools-grid reveal-stagger">
-          <article class="card card--tool">
-            <span class="card-icon" aria-hidden="true">&#x1F4D3;</span>
+        <div class="tools-stack reveal">
+          <article class="tool-item">
             <h3 data-i18n="journal_title">Diario del Duelo</h3>
-            <p data-i18n="journal_desc">Un espacio privado para escribir lo que sientes, cuando lo sientas. Con prompts guiados por IA que te ayudan a explorar tus emociones sin presión. Registra tu proceso, observa tu evolución y encuentra palabras para lo que parece indecible.</p>
+            <p data-i18n="journal_desc_short">Un espacio privado para escribir lo que sientes. Con prompts guiados por IA que te ayudan a explorar tus emociones sin presión.</p>
           </article>
-          <article class="card card--tool">
-            <span class="card-icon" aria-hidden="true">&#x1F48C;</span>
+          <article class="tool-item">
             <h3 data-i18n="capsule_title">Cápsula del Tiempo</h3>
-            <p data-i18n="capsule_desc">Guarda mensajes, fotos, audios y recuerdos para tu yo del futuro o para quienes amas. Programa su apertura para una fecha especial. Una forma de honrar la memoria y mantener vivos los vínculos que importan.</p>
+            <p data-i18n="capsule_desc_short">Guarda mensajes, fotos y recuerdos para tu yo del futuro o para quienes amas. Programa su apertura para una fecha especial.</p>
           </article>
-          <article class="card card--tool">
-            <span class="card-icon" aria-hidden="true">&#x1F517;</span>
+          <article class="tool-item">
             <h3 data-i18n="therapist_title">Conexión con tu Terapeuta</h3>
-            <p data-i18n="therapist_desc">Comparte tu progreso, entradas de diario y datos emocionales con tu terapeuta profesional. Tu terapeuta recibe un panorama más completo de tu estado emocional entre sesiones, permitiendo un acompañamiento más preciso y personalizado.</p>
-            <div class="consent-note">
-              <span aria-hidden="true">&#x1F512;</span>
-              <span data-i18n="therapist_consent">Solo bajo tu consentimiento explícito. Tú decides qué compartir, con quién y cuándo. Puedes revocar el acceso en cualquier momento.</span>
-            </div>
+            <p data-i18n="therapist_desc_short">Comparte tu progreso con tu terapeuta profesional. Solo bajo tu consentimiento explícito.</p>
           </article>
         </div>
       </section>
@@ -1104,12 +1009,12 @@
         <form class="email-form" id="waitlist-form">
           <label for="waitlist-email" class="sr-only" data-i18n="email_aria">Correo electrónico</label>
           <input type="email" id="waitlist-email" data-i18n-placeholder="email_placeholder" placeholder="tu@correo.com" required autocomplete="email" maxlength="254" inputmode="email">
-          <button type="submit" class="btn-primary" data-i18n="submit_btn">Unirme</button>
+          <button type="submit" class="btn-primary" data-i18n="submit_btn">Avísame</button>
         </form>
         <p class="form-note" data-i18n="form_note">Sin spam. Solo te avisaremos del lanzamiento.</p>
 
         <div class="form-success" id="form-success" role="status" aria-live="polite" data-i18n="form_success">
-          Gracias. Te avisaremos cuando lancemos.
+          Gracias por confiar en nosotros. Te avisaremos cuando este espacio esté listo para recibirte.
         </div>
         <div class="form-error" id="form-error" role="alert" aria-live="assertive"></div>
       </section>
@@ -1130,60 +1035,28 @@
         hero_pre: 'Tu espacio seguro para',
         hero_highlight: 'sanar juntos',
         hero_desc: 'Acompañamiento emocional potenciado por inteligencia artificial. Un lugar donde el duelo, la salud mental y el bienestar se encuentran con la tecnología y la empatía.',
-        feat1_title: 'Agentes de IA empáticos',
-        feat1_desc: 'Compañeros virtuales entrenados para escucharte y guiarte en momentos difíciles, disponibles 24/7.',
-        feat2_title: 'Comunidad de apoyo',
-        feat2_desc: 'Conecta con personas que entienden lo que estás pasando. Chat en tiempo real y grupos de soporte.',
-        feat3_title: 'Terapeutas profesionales',
-        feat3_desc: 'Acceso a profesionales de salud mental con herramientas clínicas integradas en la plataforma.',
-        resources_title_pre: 'Recursos para ',
-        resources_title_hl: 'tu duelo',
-        resources_desc: 'Contenido curado que acompaña tu proceso. Películas, series, libros y música organizados por tipo y cosmovisión.',
-        res_movies_title: 'Películas',
-        res_movies_desc: 'Historias que reflejan el duelo y la pérdida desde distintas perspectivas culturales y emocionales.',
-        res_series_title: 'Series',
-        res_series_desc: 'Series que exploran el duelo con profundidad, empatía y distintas miradas sobre la vida y la muerte.',
-        res_books_title: 'Libros',
-        res_books_desc: 'Lecturas que guían, consuelan y dan palabras a lo que muchas veces no sabemos expresar.',
-        res_music_title: 'Música',
-        res_music_desc: 'Playlists y álbumes que acompañan cada etapa del duelo, desde el dolor hasta la aceptación.',
-        tag_drama: 'Drama',
-        tag_animated: 'Animación',
-        tag_documentary: 'Documental',
-        tag_miniseries: 'Miniseries',
-        tag_selfhelp: 'Autoayuda',
-        tag_essays: 'Ensayo',
-        tag_fiction: 'Ficción',
-        tag_playlists: 'Playlists',
-        tag_ambient: 'Ambient',
-        tag_instrumental: 'Instrumental',
-        cosmo_label: 'Filtrable por cosmovisión:',
-        cosmo_western: 'Occidental',
-        cosmo_eastern: 'Oriental',
-        cosmo_indigenous: 'Indígena',
-        cosmo_african: 'Africana',
-        cosmo_spiritual: 'Espiritual',
-        cosmo_secular: 'Secular',
-        tools_title_pre: 'Herramientas para ',
-        tools_title_hl: 'tu proceso',
-        tools_desc: 'Espacios digitales diseñados con cuidado para acompañarte en cada etapa de tu camino.',
+        pillar1: 'Agentes de IA que te escuchan sin juzgar. Disponibles cuando los necesites.',
+        pillar2: 'Una comunidad que entiende lo que estás viviendo. Nunca estás solo.',
+        pillar3: 'Terapeutas profesionales con herramientas integradas para acompañarte.',
+        resources_title: 'Recursos para tu proceso',
+        resources_desc_short: 'Películas, series, libros y música curados para acompañar cada etapa de tu duelo, desde distintas perspectivas culturales y cosmovisiones.',
+        tools_title_full: 'Herramientas para tu proceso',
         journal_title: 'Diario del Duelo',
-        journal_desc: 'Un espacio privado para escribir lo que sientes, cuando lo sientas. Con prompts guiados por IA que te ayudan a explorar tus emociones sin presión. Registra tu proceso, observa tu evolución y encuentra palabras para lo que parece indecible.',
+        journal_desc_short: 'Un espacio privado para escribir lo que sientes. Con prompts guiados por IA que te ayudan a explorar tus emociones sin presión.',
         capsule_title: 'Cápsula del Tiempo',
-        capsule_desc: 'Guarda mensajes, fotos, audios y recuerdos para tu yo del futuro o para quienes amas. Programa su apertura para una fecha especial. Una forma de honrar la memoria y mantener vivos los vínculos que importan.',
+        capsule_desc_short: 'Guarda mensajes, fotos y recuerdos para tu yo del futuro o para quienes amas. Programa su apertura para una fecha especial.',
         therapist_title: 'Conexión con tu Terapeuta',
-        therapist_desc: 'Comparte tu progreso, entradas de diario y datos emocionales con tu terapeuta profesional. Tu terapeuta recibe un panorama más completo de tu estado emocional entre sesiones, permitiendo un acompañamiento más preciso y personalizado.',
-        therapist_consent: 'Solo bajo tu consentimiento explícito. Tú decides qué compartir, con quién y cuándo. Puedes revocar el acceso en cualquier momento.',
+        therapist_desc_short: 'Comparte tu progreso con tu terapeuta profesional. Solo bajo tu consentimiento explícito.',
         crisis: '<strong>Si estás en crisis:</strong> Llama al <strong>988</strong> (USA) o al <strong>4141</strong> (Chile). No estás solo/a. Hay ayuda disponible ahora mismo.',
         cta_title: 'Entérate cuando lancemos',
         cta_desc: 'Déjanos tu correo y te avisamos cuando esté listo.',
         email_placeholder: 'tu@correo.com',
         email_aria: 'Correo electrónico',
-        submit_btn: 'Unirme',
+        submit_btn: 'Avísame',
         form_note: 'Sin spam. Solo te avisaremos del lanzamiento.',
-        form_success: 'Gracias. Te avisaremos cuando lancemos.',
+        form_success: 'Gracias por confiar en nosotros. Te avisaremos cuando este espacio esté listo para recibirte.',
         sending: 'Enviando...',
-        already_listed: 'Ya estás en la lista. Te avisaremos pronto.',
+        already_listed: 'Ya estás con nosotros. Te avisaremos pronto.',
         error_msg: 'Hubo un error. Intenta de nuevo.',
         error_offline: 'Sin conexión a internet. Verifica tu conexión e intenta de nuevo.',
         error_timeout: 'La solicitud tardó demasiado. Intenta de nuevo.',
@@ -1200,60 +1073,28 @@
         hero_pre: 'Your safe space to',
         hero_highlight: 'heal together',
         hero_desc: 'Emotional support powered by artificial intelligence. A place where grief, mental health, and well-being meet technology and empathy.',
-        feat1_title: 'Empathic AI agents',
-        feat1_desc: 'Virtual companions trained to listen and guide you through difficult moments, available 24/7.',
-        feat2_title: 'Support community',
-        feat2_desc: 'Connect with people who understand what you\'re going through. Real-time chat and support groups.',
-        feat3_title: 'Professional therapists',
-        feat3_desc: 'Access to mental health professionals with clinical tools integrated into the platform.',
-        resources_title_pre: 'Resources for ',
-        resources_title_hl: 'your grief',
-        resources_desc: 'Curated content to support your journey. Movies, series, books, and music organized by type and worldview.',
-        res_movies_title: 'Movies',
-        res_movies_desc: 'Stories that reflect grief and loss from diverse cultural and emotional perspectives.',
-        res_series_title: 'Series',
-        res_series_desc: 'Series that explore grief with depth, empathy, and different views on life and death.',
-        res_books_title: 'Books',
-        res_books_desc: 'Readings that guide, comfort, and give words to what we often struggle to express.',
-        res_music_title: 'Music',
-        res_music_desc: 'Playlists and albums that accompany each stage of grief, from pain to acceptance.',
-        tag_drama: 'Drama',
-        tag_animated: 'Animation',
-        tag_documentary: 'Documentary',
-        tag_miniseries: 'Miniseries',
-        tag_selfhelp: 'Self-help',
-        tag_essays: 'Essays',
-        tag_fiction: 'Fiction',
-        tag_playlists: 'Playlists',
-        tag_ambient: 'Ambient',
-        tag_instrumental: 'Instrumental',
-        cosmo_label: 'Filter by worldview:',
-        cosmo_western: 'Western',
-        cosmo_eastern: 'Eastern',
-        cosmo_indigenous: 'Indigenous',
-        cosmo_african: 'African',
-        cosmo_spiritual: 'Spiritual',
-        cosmo_secular: 'Secular',
-        tools_title_pre: 'Tools for ',
-        tools_title_hl: 'your journey',
-        tools_desc: 'Digital spaces carefully designed to support you at every stage of your path.',
+        pillar1: 'AI agents that listen without judgment. Available whenever you need them.',
+        pillar2: 'A community that understands what you\'re going through. You\'re never alone.',
+        pillar3: 'Professional therapists with integrated tools to support you.',
+        resources_title: 'Resources for your journey',
+        resources_desc_short: 'Movies, series, books, and music curated to accompany each stage of grief, from diverse cultural perspectives and worldviews.',
+        tools_title_full: 'Tools for your journey',
         journal_title: 'Grief Journal',
-        journal_desc: 'A private space to write what you feel, whenever you feel it. With AI-guided prompts that help you explore your emotions without pressure. Track your process, observe your growth, and find words for what seems unspeakable.',
+        journal_desc_short: 'A private space to write what you feel. With AI-guided prompts that help you explore your emotions without pressure.',
         capsule_title: 'Time Capsule',
-        capsule_desc: 'Save messages, photos, audio, and memories for your future self or those you love. Schedule them to open on a special date. A way to honor memory and keep alive the bonds that matter.',
+        capsule_desc_short: 'Save messages, photos, and memories for your future self or those you love. Schedule them to open on a special date.',
         therapist_title: 'Therapist Connection',
-        therapist_desc: 'Share your progress, journal entries, and emotional data with your professional therapist. Your therapist gets a more complete picture of your emotional state between sessions, enabling more precise and personalized support.',
-        therapist_consent: 'Only with your explicit consent. You decide what to share, with whom, and when. You can revoke access at any time.',
+        therapist_desc_short: 'Share your progress with your professional therapist. Only with your explicit consent.',
         crisis: '<strong>If you\'re in crisis:</strong> Call <strong>988</strong> (USA) or <strong>4141</strong> (Chile). You\'re not alone. Help is available right now.',
         cta_title: 'Get notified when we launch',
         cta_desc: 'Leave your email and we\'ll let you know when it\'s ready.',
         email_placeholder: 'you@email.com',
         email_aria: 'Email address',
-        submit_btn: 'Join',
+        submit_btn: 'Notify me',
         form_note: 'No spam. We\'ll only notify you about the launch.',
-        form_success: 'Thank you. We\'ll let you know when we launch.',
+        form_success: 'Thank you for trusting us. We\'ll let you know when this space is ready to welcome you.',
         sending: 'Sending...',
-        already_listed: 'You\'re already on the list. We\'ll notify you soon.',
+        already_listed: 'You\'re already with us. We\'ll let you know soon.',
         error_msg: 'Something went wrong. Please try again.',
         error_offline: 'No internet connection. Check your connection and try again.',
         error_timeout: 'The request took too long. Please try again.',
@@ -1330,6 +1171,52 @@
     // Apply saved language on load
     setLang(currentLang);
 
+    // --- Time-aware greeting ---
+    (function() {
+      const hour = new Date().getHours();
+      const heroPreEl = document.querySelector('[data-i18n="hero_pre"]');
+      if (!heroPreEl) return;
+
+      const greetings = {
+        es: {
+          morning: 'Buenos días. Tu espacio seguro para',    // 6-11
+          afternoon: 'Tu espacio seguro para',                // 12-17
+          evening: 'Buenas noches. Tu espacio seguro para',   // 18-22
+          night: 'Estás a salvo aquí. Tu espacio para'        // 23-5
+        },
+        en: {
+          morning: 'Good morning. Your safe space to',
+          afternoon: 'Your safe space to',
+          evening: 'Good evening. Your safe space to',
+          night: 'You\'re safe here. Your space to'
+        }
+      };
+
+      let timeOfDay;
+      if (hour >= 6 && hour < 12) timeOfDay = 'morning';
+      else if (hour >= 12 && hour < 18) timeOfDay = 'afternoon';
+      else if (hour >= 18 && hour < 23) timeOfDay = 'evening';
+      else timeOfDay = 'night';
+
+      const lang = currentLang;
+      if (greetings[lang] && greetings[lang][timeOfDay]) {
+        heroPreEl.textContent = greetings[lang][timeOfDay];
+        // Update translation cache so lang switch preserves the greeting
+        translations.es.hero_pre = greetings.es[timeOfDay];
+        translations.en.hero_pre = greetings.en[timeOfDay];
+      }
+    })();
+
+    // --- Console message ---
+    console.log(
+      '%c sanemos.ai ',
+      'background: linear-gradient(135deg, #9CCF6A, #5FB7A6); color: #121B1A; padding: 8px 16px; border-radius: 8px; font-weight: bold; font-size: 14px;'
+    );
+    console.log(
+      '%cCada línea de código en sanemos.ai prioriza la latencia emocional sobre la velocidad técnica.\nSi estás aquí, gracias por mirar detrás del telón. 🪷',
+      'color: #A3BFBC; font-style: italic;'
+    );
+
     // --- Scroll reveal (IntersectionObserver) ---
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -1343,7 +1230,7 @@
       { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
     );
 
-    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+    document.querySelectorAll('.reveal, .pillars, .tools-stack').forEach(el => {
       // Skip if reduced motion — show immediately
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         el.classList.add('is-visible');
